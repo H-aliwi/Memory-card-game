@@ -1,5 +1,49 @@
 body {
+    margin: 0;
+    padding: 0;
     background-color: aquamarine;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    background-color: oldlace;
+    width: 550px;
+    height: 470px;
+}
+
+.cell{
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    margin: 4px;
+    border: 1px solid rgb(177, 165, 165);
+
+}
+.bg{
+    background-color: red;
+
+}
+.hiddenImge {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ZTLrez4ulzTxSZFS-aLfwvEpL6vF5Xkl_AiFQZRMN3_hRD7LP5tp0EKv63lD6trEakk&usqp=CAU');
+    background-size: cover; 
+    background-position: center; 
+    width: 100px; 
+    height: 100px; 
+}
+
+.anmation{
+    transition: transform 0.6s;
+
+
+}
+
+.avoid-clicks {
+    pointer-events: none;
 }
