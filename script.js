@@ -108,6 +108,36 @@ function ShowColor(cell ,index,clickCount){
 
 
 }
+// function to reset game 
+function resetGame() {
+
+    for (let index = 0; index < cells.length; index++) {
+        // look for cell that contains'avoid-clicks' class and remove it and add hiddenImge to
+
+            if(cells[index].classList.contains('avoid-clicks')){
+             cells[index].classList.remove('avoid-clicks')
+            }
+            cells[index].classList.add('hiddenImge')
+        }
+            // return to defult 
+            gameWon = false
+            WinCounter.innerHTML = 'Counter Found: 0/8'
+            counter =0
+            // Do new random sort. 
+            
+            const randomArrColors = doubleArr.sort(function(){
+                return 0.5 - Math.random()
+            })
+            cells.forEach((cell,i) => {
+    
+                let color =  randomArrColors[i]
+                cell.style.backgroundColor = color
+                cell.classList.add("hiddenImge")  
+            });
+    }
+            
+
+            
 
 
 
@@ -131,6 +161,7 @@ for (let index = 0; index < cells.length; index++) {
     });
 }
 
+button.addEventListener('click',resetGame)
 
 
 
