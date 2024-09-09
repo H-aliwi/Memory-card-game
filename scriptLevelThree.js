@@ -1,9 +1,18 @@
 // Variables
 const ColorArr = [
-    'https://ca.slack-edge.com/T03JBCX8WE7-U05N2501BQD-f77834d43b15-512',
-    'https://ca.slack-edge.com/T03JBCX8WE7-U07JD8HCH43-a104288cb0d9-192',
-    'https://ca.slack-edge.com/T03JBCX8WE7-U06Q7GU50NR-48da4327f0ab-48'
-]
+    'red',
+    'green',
+    'blue',
+    'yellow',
+    'orange',
+    'purple',
+    'cyan',
+    'magenta',
+    'black',    
+    'white',     
+    'brown',     
+    'pink'       
+  ];
 
 const doubleArr =[...ColorArr , ...ColorArr]
 const arrlength =doubleArr.length
@@ -46,8 +55,9 @@ const randomArrColors = doubleArr.sort(function(){
 
 // fill all cells with color and randomly and set background image to make them hidden.
 cells.forEach((cell,i) => {
-    console.log( randomArrColors[i])
-    cell.style.backgroundImage = `url(${randomArrColors[i]})`;
+    
+    let color =  randomArrColors[i]
+    cell.style.backgroundColor = color
     cell.classList.add("hiddenImge")  
 });
 
@@ -70,8 +80,8 @@ function matchPairs(FirstCell, SecondCell,Firstindex,Secondindex){
         {  
 
     // Get the background color of both cells
-    const firstCellColor = window.getComputedStyle(FirstCell).backgroundImage;
-    const secondCellColor = window.getComputedStyle(SecondCell).backgroundImage;
+    const firstCellColor = window.getComputedStyle(FirstCell).backgroundColor;
+    const secondCellColor = window.getComputedStyle(SecondCell).backgroundColor;
 
     if(firstCellColor !== secondCellColor){ // if selection is not matched.
         
@@ -91,8 +101,8 @@ function matchPairs(FirstCell, SecondCell,Firstindex,Secondindex){
                 //  Add class name :avoid-clicks" to avoid click on the cell that is orady has been matched.
                 FirstCell.classList.add("avoid-clicks")
                 SecondCell.classList.add("avoid-clicks")
-                WinCounter.innerHTML = `<span>Counter Found:</span> ${counter}/3`
-                if(counter === 3){
+                WinCounter.innerHTML = `<span>Counter Found:</span> ${counter}/12`
+                if(counter === 12){
                     elpasedTime = Date.now() - startTime;
                     clearInterval(intarvalID)
                     Win.innerHTML = `Congratulation you win!`
@@ -127,7 +137,7 @@ function ShowColor(cell ,index,clickCount){
 
 }
 function loadPage(){
-    window.location.href = "levelOne.html";
+    window.location.href = "levelThree.html";
 
 }
 // function to reset game 
@@ -144,7 +154,7 @@ function resetGame() {
             // return to defult 
 
             gameWon = false
-            WinCounter.innerHTML = ' <span>Counter Found:</span> 0/3'
+            WinCounter.innerHTML = ' <span>Counter Found:</span> 0/12'
             counter =0
 
             // Do new random sort. 
@@ -153,7 +163,9 @@ function resetGame() {
                 return 0.5 - Math.random()
             })
             cells.forEach((cell,i) => {
-                cell.style.backgroundImage = `url(${randomArrColors[i]})`;
+    
+                let color =  randomArrColors[i]
+                cell.style.backgroundColor = color
                 cell.classList.add("hiddenImge")  
             });
             // reset time
@@ -213,3 +225,5 @@ window.addEventListener("load", () => {
 
 
 // ##################################
+
+

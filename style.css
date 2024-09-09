@@ -36,7 +36,7 @@ h3{
     margin-bottom: 30px;
     font-weight: 900;
 }
-.contanier ,.contanier-levels{
+.contanier ,.contanier-levels ,.contanier-main{
     background-color: #ffffffd4;
     padding: 14px;
     border-radius: 10px;
@@ -84,6 +84,12 @@ h3{
     font-size: 24px;
 
 
+    background-size: cover !important;
+    background-position: center! important;
+    width: 100px !important; 
+    height: 100px !important; 
+
+
 }
 .cell:hover {
     transform: scale(1.05);
@@ -96,12 +102,13 @@ h3{
 
 }
 .hiddenImge {
-    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ZTLrez4ulzTxSZFS-aLfwvEpL6vF5Xkl_AiFQZRMN3_hRD7LP5tp0EKv63lD6trEakk&usqp=CAU');
-    background-size: cover; 
-    background-position: center; 
-    width: 100px; 
-    height: 100px; 
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ZTLrez4ulzTxSZFS-aLfwvEpL6vF5Xkl_AiFQZRMN3_hRD7LP5tp0EKv63lD6trEakk&usqp=CAU')!important;
+    background-size: cover !important;
+    background-position: center! important;
+    width: 100px !important; 
+    height: 100px !important; 
 }
+
 
 
 
@@ -151,16 +158,16 @@ span ,.counter{
 
 
 
-.contanier-levels ul {
+.contanier-levels ul ,.contanier-main ul{
     list-style-type: none;   
     padding: 0;              
 }
 
-.contanier-levels li {
+.contanier-levels li ,.contanier-main li {
     margin: 10px 0;          
 }
 
-.contanier-levels a {
+.contanier-levels a ,.contanier-main a{
     text-decoration: none;     
     color: #007BFF;          
     font-size: 1.1em;         
@@ -175,4 +182,17 @@ span ,.counter{
     margin-left: 13px;
     margin-top: -507px;
 
+}
+
+
+.contanier-main { 
+  
+    height: 40%;
+    width: 70%;
+}
+
+.contanier-main .levels{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
