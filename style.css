@@ -36,7 +36,7 @@ h3{
     margin-bottom: 30px;
     font-weight: 900;
 }
-.contanier ,.contanier-levels ,.contanier-main{
+.contanier ,.contanier-levels ,.contanier-main ,#contanier-levels-first{
     background-color: #ffffffd4;
     padding: 14px;
     border-radius: 10px;
@@ -158,16 +158,16 @@ span ,.counter{
 
 
 
-.contanier-levels ul ,.contanier-main ul{
+.contanier-levels ul ,.contanier-main ul, #contanier-levels-first ul{
     list-style-type: none;   
     padding: 0;              
 }
 
-.contanier-levels li ,.contanier-main li {
+.contanier-levels li ,.contanier-main li  ,#contanier-levels-first li {
     margin: 10px 0;          
 }
 
-.contanier-levels a ,.contanier-main a{
+.contanier-levels a ,.contanier-main a ,#contanier-levels-first a{
     text-decoration: none;     
     color: #007BFF;          
     font-size: 1.1em;         
@@ -181,6 +181,13 @@ span ,.counter{
 .contanier-levels{
     margin-left: 13px;
     margin-top: -507px;
+    width: 120px;
+}
+
+#contanier-levels-first{
+    margin-left: 13px;
+    margin-top: -305px;
+    width: 86px;
 
 }
 
