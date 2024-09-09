@@ -21,7 +21,7 @@ body {
 
 h2{
     font-size: 32px;
-    color: #252551;
+    color: #08155c;
     text-align: center; display: flex;
     justify-content: space-evenly;
     margin-bottom: 30px;
@@ -54,11 +54,12 @@ h2{
     justify-content: center;
     align-items: center;
     /* background-color: oldlace; */
-    width: 550px;
-    height: 470px;
-
+    /* width: 550px;
+    height: 470px; */
     gap: 10px;
     margin-top: 20px;
+    padding:  7px 37px;
+    margin-bottom: 10px;
 }
 
 
@@ -87,12 +88,13 @@ h2{
 
 }
 .hiddenImge {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ZTLrez4ulzTxSZFS-aLfwvEpL6vF5Xkl_AiFQZRMN3_hRD7LP5tp0EKv63lD6trEakk&usqp=CAU');
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ZTLrez4ulzTxSZFS-aLfwvEpL6vF5Xkl_AiFQZRMN3_hRD7LP5tp0EKv63lD6trEakk&usqp=CAU');
     background-size: cover; 
     background-position: center; 
     width: 100px; 
     height: 100px; 
 }
+
 
 
 
@@ -138,3 +140,5 @@ span ,.counter{
     color: #08155c;
     font-size: 15px;
 }
+/* Level Two */
+

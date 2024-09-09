@@ -7,8 +7,12 @@ const ColorArr = [
     'orange',
     'purple',
     'cyan',
-    'magenta'
-];
+    'magenta',
+    'black',    
+    'white',     
+    'brown',     
+    'pink'       
+  ];
 
 const doubleArr =[...ColorArr , ...ColorArr]
 const arrlength =doubleArr.length
@@ -35,6 +39,8 @@ let secs=0
 let startTime=0
 let elpasedTime=0
 let intarvalID;
+
+
 
 
 
@@ -95,15 +101,10 @@ function matchPairs(FirstCell, SecondCell,Firstindex,Secondindex){
                 //  Add class name :avoid-clicks" to avoid click on the cell that is orady has been matched.
                 FirstCell.classList.add("avoid-clicks")
                 SecondCell.classList.add("avoid-clicks")
-                WinCounter.innerHTML = `<span>Counter Found:</span> ${counter}/8`
-                if(counter === 8){
-                    elpasedTime = Date.now() - startTime;
-                    clearInterval(intarvalID)
-                    const time =Math.floor(elpasedTime)
-                    
-                    Win.innerHTML = `Congratulation you win! `
+                WinCounter.innerHTML = `<span>Counter Found:</span> ${counter}/12`
+                if(counter === 12){
+                    Win.innerHTML = `Congratulation you win!`
                     gamewin=true;
-
                 }
         
         
@@ -134,7 +135,7 @@ function ShowColor(cell ,index,clickCount){
 
 }
 function loadPage(){
-    window.location.href = "levelOne.html";
+    window.location.href = "levelTwo.html";
 
 }
 // function to reset game 
@@ -151,7 +152,7 @@ function resetGame() {
             // return to defult 
 
             gameWon = false
-            WinCounter.innerHTML = ' <span>Counter Found:</span> 0/8'
+            WinCounter.innerHTML = ' <span>Counter Found:</span> 0/12'
             counter =0
 
             // Do new random sort. 
@@ -166,7 +167,10 @@ function resetGame() {
                 cell.classList.add("hiddenImge")  
             });
             // reset time
-            window.location.href = "levelOne.html";
+            loadPage()
+
+
+            
 
             
     }
