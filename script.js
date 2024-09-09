@@ -12,11 +12,31 @@ const ColorArr = [
 
 const doubleArr =[...ColorArr , ...ColorArr]
 const arrlength =doubleArr.length
+
 let gamewin=false
 let counter=0
+
+
+
 const cells =document.querySelectorAll('.cell')
+
 const WinCounter =document.querySelector(".Counter")
+
+const Win =document.querySelector(".win")
+
+const Time =document.querySelector(".Time")
+
 const button =document.querySelector(".button")
+
+let hrs=0
+let mins=0
+let secs=0
+
+let startTime=0
+let elpasedTime=0
+let intarvalID;
+
+
 
 
 // sort the doubleArr randomly
@@ -63,11 +83,11 @@ function matchPairs(FirstCell, SecondCell,Firstindex,Secondindex){
         FirstCell.classList.remove("hiddenImage")
         SecondCell.classList.remove("hiddenImage")
 
-        // Make a delay so that the player can see for 0.5 second the wrong selection.
+        // Make a delay so that the player can see for 0.3 second the wrong selection.
         setTimeout(() => {
             FirstCell.classList.add("hiddenImge")
             SecondCell.classList.add("hiddenImge")
-        }, 500); 
+        }, 300); 
         }
         else{ // matches found
         
@@ -75,9 +95,9 @@ function matchPairs(FirstCell, SecondCell,Firstindex,Secondindex){
                 //  Add class name :avoid-clicks" to avoid click on the cell that is orady has been matched.
                 FirstCell.classList.add("avoid-clicks")
                 SecondCell.classList.add("avoid-clicks")
-                WinCounter.innerHTML = `Counter Found: ${counter}/8`
+                WinCounter.innerHTML = `<span>Counter Found:</span> ${counter}/8`
                 if(counter === 8){
-                    WinCounter.innerHTML = `Congratulation you win! Counter Found: ${counter}/8 `
+                    Win.innerHTML = `Congratulation you win!`
                     gamewin=true;
                 }
         
@@ -108,6 +128,10 @@ function ShowColor(cell ,index,clickCount){
 
 
 }
+function loadPage(){
+    window.location.href = "index.html";
+
+}
 // function to reset game 
 function resetGame() {
 
@@ -120,9 +144,11 @@ function resetGame() {
             cells[index].classList.add('hiddenImge')
         }
             // return to defult 
+
             gameWon = false
-            WinCounter.innerHTML = 'Counter Found: 0/8'
+            WinCounter.innerHTML = ' <span>Counter Found:</span> 0/8'
             counter =0
+
             // Do new random sort. 
             
             const randomArrColors = doubleArr.sort(function(){
@@ -134,8 +160,24 @@ function resetGame() {
                 cell.style.backgroundColor = color
                 cell.classList.add("hiddenImge")  
             });
-    }
+            // reset time
+            loadPage()
+
             
+    }
+    
+
+    function updateTime(){
+        elpasedTime = Date.now()-startTime;
+
+        secs = Math.floor((elpasedTime/1000)%60);
+        mins = Math.floor((elpasedTime/(1000*60))%60);
+
+        hrs = Math.floor((elpasedTime/(1000 *60*60))%60);
+
+        Time.innerHTML = `<span>Time: </span>${hrs} : ${mins} : ${secs} sec`;
+
+    }
 
             
 
@@ -157,11 +199,17 @@ for (let index = 0; index < cells.length; index++) {
             clickCount=0
         }
 
-
     });
 }
 
 button.addEventListener('click',resetGame)
+
+
+window.addEventListener("load", () => {
+    startTime = Date.now() - elpasedTime;
+    intarvalID =setInterval(updateTime,75);
+  });
+
 
 
 
