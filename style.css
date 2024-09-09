@@ -1,30 +1,81 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: aquamarine;
+    background-color: #E6E6FA;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: Arial, sans-serif;
 
 }
+.h1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E6E6FA; 
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+h2{
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #252551;
+    text-align: center; display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+    
+}
+.contanier{
+    background-color: #ffffffd4;
+    padding: 14px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    
+}
+/* .GName{
+    background-color: #008CBA;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+      
+      
+  } */
+
 .game{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4px;
-    background-color: oldlace;
+    /* background-color: oldlace; */
     width: 550px;
     height: 470px;
+
+    gap: 10px;
+    margin-top: 20px;
 }
+
 
 .cell{
     background-color: white;
     width: 100px;
     height: 100px;
     margin: 4px;
-    border: 1px solid rgb(177, 165, 165);
+    border: 1px solid #09171857;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    transition: transform 0.3s, box-shadow 0.3s;
 
+}
+
+.cell:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 .bg{
     background-color: red;
@@ -38,12 +89,39 @@ body {
     height: 100px; 
 }
 
-.anmation{
+
+.time, .counter {
+    font-size: 20px;
+    color: #252551; 
+}
+
+span {
+    font-weight: bold;
+    color: #252551;
+}
+
+
+/* .anmation{
     transition: transform 0.6s;
 
 
-}
+} */
 
 .avoid-clicks {
-    pointer-events: none;
+    pointer-events: none
 }
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button{
+    /* margin-top: 20px */
+    padding: 2px;
+    width: 108px;
+    height: 40px;
+    border-radius: 17%;
+    background-color: #08155c;
+    color: white;
+    font-size: 15px;
+  }
