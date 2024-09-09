@@ -99,7 +99,7 @@ function matchPairs(FirstCell, SecondCell,Firstindex,Secondindex){
                 if(counter === 8){
                     elpasedTime = Date.now() - startTime;
                     clearInterval(intarvalID)
-                    const time =Math.floor(elpasedTime)
+                    // const time =Math.floor(elpasedTime)
                     
                     Win.innerHTML = `Congratulation you win! `
                     gamewin=true;

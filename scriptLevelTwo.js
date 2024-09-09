@@ -103,6 +103,8 @@ function matchPairs(FirstCell, SecondCell,Firstindex,Secondindex){
                 SecondCell.classList.add("avoid-clicks")
                 WinCounter.innerHTML = `<span>Counter Found:</span> ${counter}/12`
                 if(counter === 12){
+                    elpasedTime = Date.now() - startTime;
+                    clearInterval(intarvalID)
                     Win.innerHTML = `Congratulation you win!`
                     gamewin=true;
                 }

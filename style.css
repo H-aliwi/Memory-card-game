@@ -28,7 +28,15 @@ h2{
     font-weight: 900;
     
 }
-.contanier{
+h3{
+    font-size: 22px;
+    color: #08155c;
+    text-align: center; display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+.contanier ,.contanier-levels{
     background-color: #ffffffd4;
     padding: 14px;
     border-radius: 10px;
@@ -140,5 +148,31 @@ span ,.counter{
     color: #08155c;
     font-size: 15px;
 }
-/* Level Two */
 
+
+
+.contanier-levels ul {
+    list-style-type: none;   
+    padding: 0;              
+}
+
+.contanier-levels li {
+    margin: 10px 0;          
+}
+
+.contanier-levels a {
+    text-decoration: none;     
+    color: #007BFF;          
+    font-size: 1.1em;         
+    transition: color 0.3s;   
+}
+
+.contanier-levels a:hover {
+    color: #0056b3;          
+}
+
+.contanier-levels{
+    margin-left: 13px;
+    margin-top: -507px;
+
+}
