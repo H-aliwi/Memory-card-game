@@ -18,6 +18,16 @@ let counter=0
 
 let pagelinkID = "1"
 
+let soundWrong= new Audio();
+soundWrong.src = "Sound/wrong.mp3"
+
+let soundCorrect= new Audio();
+soundCorrect.src = "Sound/correct.mp3"
+
+
+let soundWin= new Audio();
+soundWin.src = "Sound/win.mp3"
+
 
 
 const cells =document.querySelectorAll('.cell')
@@ -82,7 +92,8 @@ function matchPairs(FirstCell, SecondCell,Firstindex,Secondindex){
     const secondCellColor = window.getComputedStyle(SecondCell).backgroundColor;
 
     if(firstCellColor !== secondCellColor){ // if selection is not matched.
-        
+        soundWrong.play()      
+
 
         FirstCell.classList.remove("hiddenImage")
         SecondCell.classList.remove("hiddenImage")
@@ -94,13 +105,17 @@ function matchPairs(FirstCell, SecondCell,Firstindex,Secondindex){
         }, 300); 
         }
         else{ // matches found
-        
+
+            soundCorrect.play()      
+
                 counter++
                 //  Add class name :avoid-clicks" to avoid click on the cell that is orady has been matched.
                 FirstCell.classList.add("avoid-clicks")
                 SecondCell.classList.add("avoid-clicks")
                 WinCounter.innerHTML = `<span>Counter Found:</span> ${counter}/8`
                 if(counter === 8){
+                    soundWin.play()
+
                     elpasedTime = Date.now() - startTime;
                     clearInterval(intarvalID)
                     Win.innerHTML = `Congratulation you win!`
