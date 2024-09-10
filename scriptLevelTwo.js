@@ -11,7 +11,7 @@ const ColorArr = [
     'black',    
     'white',     
     'brown',     
-    'pink'       
+    'pink'
   ];
 
 const doubleArr =[...ColorArr , ...ColorArr]
@@ -19,6 +19,8 @@ const arrlength =doubleArr.length
 
 let gamewin=false
 let counter=0
+
+let pagelinkID = "1"
 
 
 
@@ -112,7 +114,7 @@ function matchPairs(FirstCell, SecondCell,Firstindex,Secondindex){
         
         }
     } else{  // IF the player click on same cell in which is does not make sense (Must select other cell )
-        alert("Please select another cell!")
+        alert("Please select another card!")
         FirstCell.classList.add("hiddenImge")
 
     }
@@ -190,6 +192,18 @@ function resetGame() {
 
     }
 
+    // function that makes the link active for the current page
+    function AddActivelike(pagelinkID){
+        const links = document.querySelectorAll('.contanier-levels li a ')
+
+        if(pagelinkID == links[1].getAttribute('value') ){
+            const link =document.querySelectorAll('.contanier-levels li')
+            console.log(document.querySelectorAll('.contanier-levels li'))
+            link[1].classList.add('active')
+
+        }
+    }
+
             
 
 
@@ -219,7 +233,10 @@ button.addEventListener('click',resetGame)
 window.addEventListener("load", () => {
     startTime = Date.now() - elpasedTime;
     intarvalID =setInterval(updateTime,75);
-  });
+
+    AddActivelike(pagelinkID)
+
+});
 
 
 

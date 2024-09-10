@@ -1,11 +1,11 @@
 // Variables
-const ColorArr = [
+const ImagesArr = [
     'https://ca.slack-edge.com/T03JBCX8WE7-U05N2501BQD-f77834d43b15-512',
     'https://ca.slack-edge.com/T03JBCX8WE7-U07JD8HCH43-a104288cb0d9-192',
     'https://ca.slack-edge.com/T03JBCX8WE7-U06Q7GU50NR-48da4327f0ab-48'
 ]
 
-const doubleArr =[...ColorArr , ...ColorArr]
+const doubleArr =[...ImagesArr , ...ImagesArr]
 const arrlength =doubleArr.length
 
 let gamewin=false
@@ -30,6 +30,8 @@ let secs=0
 let startTime=0
 let elpasedTime=0
 let intarvalID;
+let pagelinkID = "0"
+
 
 
 
@@ -37,7 +39,7 @@ let intarvalID;
 
 
 // sort the doubleArr randomly
-const randomArrColors = doubleArr.sort(function(){
+const randomArrImages = doubleArr.sort(function(){
     return 0.5 - Math.random()
 })
 
@@ -46,8 +48,8 @@ const randomArrColors = doubleArr.sort(function(){
 
 // fill all cells with color and randomly and set background image to make them hidden.
 cells.forEach((cell,i) => {
-    console.log( randomArrColors[i])
-    cell.style.backgroundImage = `url(${randomArrColors[i]})`;
+    console.log( randomArrImages[i])
+    cell.style.backgroundImage = `url(${randomArrImages[i]})`;
     cell.classList.add("hiddenImge")  
 });
 
@@ -102,7 +104,7 @@ function matchPairs(FirstCell, SecondCell,Firstindex,Secondindex){
         
         }
     } else{  // IF the player click on same cell in which is does not make sense (Must select other cell )
-        alert("Please select another cell!")
+        alert("Please select another card!")
         FirstCell.classList.add("hiddenImge")
 
     }
@@ -149,11 +151,11 @@ function resetGame() {
 
             // Do new random sort. 
             
-            const randomArrColors = doubleArr.sort(function(){
+            const randomArrImages = doubleArr.sort(function(){
                 return 0.5 - Math.random()
             })
             cells.forEach((cell,i) => {
-                cell.style.backgroundImage = `url(${randomArrColors[i]})`;
+                cell.style.backgroundImage = `url(${randomArrImages[i]})`;
                 cell.classList.add("hiddenImge")  
             });
             // reset time
@@ -178,8 +180,18 @@ function resetGame() {
 
     }
 
-            
 
+    // function that makes the link active for the current page
+    function AddActivelike(pagelinkID){
+        const links = document.querySelectorAll('#contanier-levels-first li a ')
+        console.log(links)
+        if(pagelinkID == links[0].getAttribute('value') ){
+            const link =document.querySelectorAll('#contanier-levels-first  li')
+            console.log(document.querySelectorAll('#contanier-levels-first li'))
+            link[0].classList.add('active')
+
+        }
+    }
 
 
 // ##################################
@@ -207,6 +219,9 @@ button.addEventListener('click',resetGame)
 window.addEventListener("load", () => {
     startTime = Date.now() - elpasedTime;
     intarvalID =setInterval(updateTime,75);
+
+    AddActivelike(pagelinkID)
+
   });
 
 
