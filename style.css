@@ -101,6 +101,8 @@ h3{
     background-color: red;
 
 }
+
+/*  I use !important becuse in "level 1" in case of matching images it do not hidde the images without the "!important" */
 .hiddenImge {
     background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ZTLrez4ulzTxSZFS-aLfwvEpL6vF5Xkl_AiFQZRMN3_hRD7LP5tp0EKv63lD6trEakk&usqp=CAU')!important;
     background-size: cover !important;

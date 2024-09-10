@@ -1,3 +1,4 @@
+
 // Variables
 const ImagesArr = [
     'https://ca.slack-edge.com/T03JBCX8WE7-U05N2501BQD-f77834d43b15-512',
@@ -11,8 +12,6 @@ const arrlength =doubleArr.length
 let gamewin=false
 let counter=0
 
-
-
 const cells =document.querySelectorAll('.cell')
 
 const WinCounter =document.querySelector(".Counter")
@@ -23,6 +22,16 @@ const Time =document.querySelector(".Time")
 
 const button =document.querySelector(".button")
 
+let soundWrong= new Audio();
+soundWrong.src = "Sound/wrong.mp3"
+
+let soundCorrect= new Audio();
+soundCorrect.src = "Sound/correct.mp3"
+
+
+let soundWin= new Audio();
+soundWin.src = "Sound/win.mp3"
+
 let hrs=0
 let mins=0
 let secs=0
@@ -31,12 +40,6 @@ let startTime=0
 let elpasedTime=0
 let intarvalID;
 let pagelinkID = "0"
-
-
-
-
-
-
 
 // sort the doubleArr randomly
 const randomArrImages = doubleArr.sort(function(){
@@ -55,11 +58,11 @@ cells.forEach((cell,i) => {
 
 // Functions ---------------
 
-// function that check for matching the two cell clicked.
+// function that check for matching the two cells clicked.
 
 function matchPairs(FirstCell, SecondCell,Firstindex,Secondindex){
 
-    if(gamewin){
+    if(gamewin){  // if gamewin true then return
         return 
     }
     
@@ -76,7 +79,8 @@ function matchPairs(FirstCell, SecondCell,Firstindex,Secondindex){
     const secondCellColor = window.getComputedStyle(SecondCell).backgroundImage;
 
     if(firstCellColor !== secondCellColor){ // if selection is not matched.
-        
+        soundWrong.play()      
+
 
         FirstCell.classList.remove("hiddenImage")
         SecondCell.classList.remove("hiddenImage")
@@ -87,16 +91,23 @@ function matchPairs(FirstCell, SecondCell,Firstindex,Secondindex){
             SecondCell.classList.add("hiddenImge")
         }, 300); 
         }
-        else{ // matches found
+        else{ // matches found   
+            soundCorrect.play()      
+
         
                 counter++
-                //  Add class name :avoid-clicks" to avoid click on the cell that is orady has been matched.
+                //  Add class name "avoid-clicks" to avoid click on the cell that is orady has been matched.
                 FirstCell.classList.add("avoid-clicks")
                 SecondCell.classList.add("avoid-clicks")
+
                 WinCounter.innerHTML = `<span>Counter Found:</span> ${counter}/3`
-                if(counter === 3){
+
+                if(counter === 3){ // IF win happen 
+                    soundWin.play()
+                    // Stop the time
                     elpasedTime = Date.now() - startTime;
                     clearInterval(intarvalID)
+
                     Win.innerHTML = `Congratulation you win!`
                     gamewin=true;
                 }
@@ -111,7 +122,8 @@ function matchPairs(FirstCell, SecondCell,Firstindex,Secondindex){
 
      // cell.classList.Add("anmation");
     }
-
+// function 'ShowColor' that store cards clicked information for both first and second clicks
+// AND then passed them to 'matchPairs' function on the second click.  
 function ShowColor(cell ,index,clickCount){
     if(clickCount == 1){
         Firstindex=index
@@ -160,11 +172,6 @@ function resetGame() {
             });
             // reset time
             loadPage()
-
-
-            
-
-            
     }
     
 
@@ -182,7 +189,7 @@ function resetGame() {
 
 
     // function that makes the link active for the current page
-    function AddActivelike(pagelinkID){
+    function AddActiveLink(pagelinkID){
         const links = document.querySelectorAll('#contanier-levels-first li a ')
         console.log(links)
         if(pagelinkID == links[0].getAttribute('value') ){
@@ -199,30 +206,37 @@ function resetGame() {
 // Events ------------
 let clickCount =0
 
+
+// EventListener for handing first and sesond clicks
 for (let index = 0; index < cells.length; index++) {
     cells[index].addEventListener('click', function() {
         
-        clickCount++
+        clickCount++  
+        // call function 'ShowColor' taht 
         ShowColor(cells[index],index ,clickCount);
         // console.log(clickCount)
-        if(clickCount == 2)
+        if(clickCount == 2) // when it reach to second click then make it ZERO
         {
             clickCount=0
         }
 
     });
 }
+// EventListener for reset the game 
 
 button.addEventListener('click',resetGame)
 
+// EventListener for when load the page
 
 window.addEventListener("load", () => {
+    // time functionlity
     startTime = Date.now() - elpasedTime;
     intarvalID =setInterval(updateTime,75);
 
-    AddActivelike(pagelinkID)
+    //  call AddActiveLink that make the link active for current page 
+    AddActiveLink(pagelinkID)
 
-  });
+});
 
 
 

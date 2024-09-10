@@ -7,11 +7,7 @@ const ColorArr = [
     'orange',
     'purple',
     'cyan',
-    'magenta',
-    'black',    
-    'white',     
-    'brown',     
-    'pink'
+    'magenta'
   ];
 
 const doubleArr =[...ColorArr , ...ColorArr]
@@ -103,8 +99,8 @@ function matchPairs(FirstCell, SecondCell,Firstindex,Secondindex){
                 //  Add class name :avoid-clicks" to avoid click on the cell that is orady has been matched.
                 FirstCell.classList.add("avoid-clicks")
                 SecondCell.classList.add("avoid-clicks")
-                WinCounter.innerHTML = `<span>Counter Found:</span> ${counter}/12`
-                if(counter === 12){
+                WinCounter.innerHTML = `<span>Counter Found:</span> ${counter}/8`
+                if(counter === 8){
                     elpasedTime = Date.now() - startTime;
                     clearInterval(intarvalID)
                     Win.innerHTML = `Congratulation you win!`
@@ -156,7 +152,7 @@ function resetGame() {
             // return to defult 
 
             gameWon = false
-            WinCounter.innerHTML = ' <span>Counter Found:</span> 0/12'
+            WinCounter.innerHTML = ' <span>Counter Found:</span> 0/8'
             counter =0
 
             // Do new random sort. 
@@ -193,7 +189,7 @@ function resetGame() {
     }
 
     // function that makes the link active for the current page
-    function AddActivelike(pagelinkID){
+    function AddActiveLink(pagelinkID){
         const links = document.querySelectorAll('.contanier-levels li a ')
 
         if(pagelinkID == links[1].getAttribute('value') ){
@@ -234,7 +230,7 @@ window.addEventListener("load", () => {
     startTime = Date.now() - elpasedTime;
     intarvalID =setInterval(updateTime,75);
 
-    AddActivelike(pagelinkID)
+    AddActiveLink(pagelinkID)
 
 });
 

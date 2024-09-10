@@ -194,7 +194,7 @@ function resetGame() {
     }
 
                 // function that makes the link active for the current page
-    function AddActivelike(pagelinkID){
+    function AddActiveLink(pagelinkID){
         const links = document.querySelectorAll('.contanier-levels li a ')
 
         if(pagelinkID == links[2].getAttribute('value') ){
@@ -232,7 +232,7 @@ button.addEventListener('click',resetGame)
 window.addEventListener("load", () => {
     startTime = Date.now() - elpasedTime;
     intarvalID =setInterval(updateTime,75);
-    AddActivelike(pagelinkID)
+    AddActiveLink(pagelinkID)
 
   });
 
