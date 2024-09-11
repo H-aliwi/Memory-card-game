@@ -5,7 +5,7 @@
 
 ***
 ### ***_Description_***
-### **In this project, I will do a Memory Cards game using HTML, CSS, and JavaScript.** 
+#### **In this project, I will do a Memory Cards game using HTML, CSS, and JavaScript. The game will contain three levels.** 
 ***
 
 ### ***_Technologies Used_***
@@ -14,22 +14,25 @@
 * Java Script (DOM) 
 ***
 
-### ***Game Image Sample***
+### ***Memory Card Game Images***
 <!-- ##### Sign up and sign in as a new user and then begin viewing the different sections of the website.
 ##### A Trello board was used to keep track of development progress and can be viewed [here](https://getnave.com/blog/trello-kanban-boards).
 ##### The project was deployed and can be viewed [here](https://www.namecheap.com/market). -->
 
 ***
 
-![Image](https://www.sourcecodester.com/sites/default/files/images/razormist/Color%20Matching%20Game%20in%20JavaScript%204.png)
-![Image](https://img.freepik.com/free-vector/hand-drawn-memory-game-card_23-2150138540.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1725321600&semt=ais_hybrid)
+![Image](./images/levelOne.png)
+![Image](./images/levelTwo.png)
+![Image](./images/levelThree.png)
+
+
 
 
 ***
 
 
 ### ***_Future Updates_***
-- [ ] Still in process
+- [ ] Adding flip anmation.
 
 ***
 ### ***_Credits_***

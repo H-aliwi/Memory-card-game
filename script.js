@@ -31,7 +31,6 @@ soundCorrect.src = "Sound/correct.mp3"
 
 let soundWin= new Audio();
 soundWin.src = "Sound/win.mp3"
-
 let hrs=0
 let mins=0
 let secs=0
