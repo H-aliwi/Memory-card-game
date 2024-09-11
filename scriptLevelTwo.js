@@ -197,7 +197,7 @@ function resetGame() {
         mins = Math.floor((elpasedTime/(1000*60))%60);
 
 
-        Time.innerHTML = `<span>Time: </span>${mins} : ${secs} sec`;
+        Time.innerHTML = `<span>Time: </span><span class="numbers">${mins} : ${secs}</span> sec`;
 
     }
 

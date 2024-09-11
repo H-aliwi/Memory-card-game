@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #E6E6FA; 
+    background-color: #c2c2df4a; 
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -130,6 +130,10 @@ span{
 .Counter,.Time{
     color: #252551;
     font-size: 17px;
+    color: #0e0d0d;
+    background-color: #1e88e54a;
+    padding: 5px;
+    border: outset
 }
 
 /* .anmation{
