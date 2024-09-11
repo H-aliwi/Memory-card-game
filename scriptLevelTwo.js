@@ -1,4 +1,4 @@
-// Variables
+// Global Variables
 const ColorArr = [
     'red',
     'green',

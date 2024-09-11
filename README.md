@@ -1,5 +1,5 @@
 # Memory Cards Game
-## Date: 05/09/2024
+## Date: 12/09/2024
 ## By: Hussain Jaffer Aliwi
 ####  [GitHub](https://github.com/H-aliwi/) | [Linkedln](https://www.linkedin.com) 
 

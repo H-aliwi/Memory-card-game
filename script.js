@@ -1,5 +1,5 @@
 
-// Variables
+// Global Variables
 const ImagesArr = [
     'https://ca.slack-edge.com/T03JBCX8WE7-U05N2501BQD-f77834d43b15-512',
     'https://ca.slack-edge.com/T03JBCX8WE7-U07JD8HCH43-a104288cb0d9-192',
