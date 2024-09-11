@@ -31,7 +31,6 @@ soundCorrect.src = "Sound/correct.mp3"
 
 let soundWin= new Audio();
 soundWin.src = "Sound/win.mp3"
-let hrs=0
 let mins=0
 let secs=0
 
@@ -173,6 +172,7 @@ function resetGame() {
             loadPage()
     }
     
+    // function updateTime that define the time
 
     function updateTime(){
         elpasedTime = Date.now()-startTime;
@@ -180,9 +180,8 @@ function resetGame() {
         secs = Math.floor((elpasedTime/1000)%60);
         mins = Math.floor((elpasedTime/(1000*60))%60);
 
-        hrs = Math.floor((elpasedTime/(1000 *60*60))%60);
 
-        Time.innerHTML = `<span>Time: </span>${hrs} : ${mins} : ${secs} sec`;
+        Time.innerHTML = `<span>Time: </span>${mins} : ${secs} sec`;
 
     }
 
