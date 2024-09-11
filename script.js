@@ -140,7 +140,7 @@ function ShowColor(cell ,index,clickCount){
 
 }
 function loadPage(){
-    window.location.href = "levelOne.html";
+    window.location.href = "index.html";
 
 }
 // function to reset game 

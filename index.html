@@ -4,19 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Card Game</title>
-    <!-- <script defer src="script.js"></script> -->
+    <script defer src="script.js"></script>
      <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="contanier-main">
 
-            <h3>Memory Card Game</h3>
-                <div class="levels">
-                    <li><a href="levelOne.html">Level 1</a>
-                    </li>
-                    <li><a href="levelTwo.html">Level 2</a>
-                </div>
-            </ul>
-    <div>
+
+    <div class="contanier">
+        <h2>Memory Card Game
+            <h4>Images Matching
+            </h4>
+        </h2>
+       
+        <h2 class="win"></h2>
+
+        <div class="h1">
+            <div class="Time"> <span>Time: </span>00:00:00</div>
+            <div class="Counter"> <span>Counter Found: </span>0/3</div>
+        </div>
+
+
+        <div class="game">
+            <div class="colunm">
+                <div class="cell "></div>
+                <div class="cell"></div>
+           
+            </div>
+            <div class="colunm" >
+                <div class="cell "></div>
+                <div class="cell"></div>
+           
+            </div>
+            <div class="colunm">
+                <div class="cell "></div>
+                <div class="cell"></div>
+         
+            </div>
+   
+        </div>
+
+        <div class="button-container">
+            <button class="button">Reset Game</button>
+
+        </div>
+        
+    </div>
+    <div id="contanier-levels-first">
+        <h3>Levels</h3>
+        <ul>
+            <li><a href="levelOne.html"   value="0" class="link" >Level 1</a>
+            </li>
+            <li><a href="levelTwo.html"   value="1" class="link">Level 2</a>
+            <li><a href="levelThree.html" value="2" class="link">Level 3</a>
+        </ul>
+    </div>
+    
+    
+    
 </body>
 </html>
