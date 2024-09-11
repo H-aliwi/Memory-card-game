@@ -207,7 +207,6 @@ function resetGame() {
 
         if(pagelinkID == links[1].getAttribute('value') ){
             const link =document.querySelectorAll('.contanier-levels li')
-            console.log(document.querySelectorAll('.contanier-levels li'))
             link[1].classList.add('active')
 
         }
@@ -227,7 +226,6 @@ for (let index = 0; index < cells.length; index++) {
         
         clickCount++
         ShowColor(cells[index],index ,clickCount);
-        // console.log(clickCount)
         if(clickCount == 2)
         {
             clickCount=0

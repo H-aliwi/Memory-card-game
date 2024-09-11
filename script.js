@@ -49,7 +49,6 @@ const randomArrImages = doubleArr.sort(function(){
 
 // fill all cells with color and randomly and set background image to make them hidden.
 cells.forEach((cell,i) => {
-    console.log( randomArrImages[i])
     cell.style.backgroundImage = `url(${randomArrImages[i]})`;
     cell.classList.add("hiddenImge")  
 });
@@ -189,10 +188,8 @@ function resetGame() {
     // function that makes the link active for the current page
     function AddActiveLink(pagelinkID){
         const links = document.querySelectorAll('#contanier-levels-first li a ')
-        console.log(links)
         if(pagelinkID == links[0].getAttribute('value') ){
             const link =document.querySelectorAll('#contanier-levels-first  li')
-            console.log(document.querySelectorAll('#contanier-levels-first li'))
             link[0].classList.add('active')
 
         }
@@ -212,7 +209,6 @@ for (let index = 0; index < cells.length; index++) {
         clickCount++  
         // call function 'ShowColor' taht 
         ShowColor(cells[index],index ,clickCount);
-        // console.log(clickCount)
         if(clickCount == 2) // when it reach to second click then make it ZERO
         {
             clickCount=0
