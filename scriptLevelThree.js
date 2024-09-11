@@ -12,7 +12,7 @@ const ColorArr = [
     'white',     
     'brown',     
     'pink'       
-  ];
+];
 
 const doubleArr =[...ColorArr , ...ColorArr]
 const arrlength =doubleArr.length

@@ -1,12 +1,15 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #E6E6FA;
+    background-image: url('https://panelcraft.sg/images/watermarked/15/detailed/47/LG003_Sliver_Grey.png');
+    /* https://panelcraft.sg/images/watermarked/15/detailed/47/LG003_Sliver_Grey.png */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     font-family: Arial, sans-serif;
+    background-size: cover ;
+    background-position: center;
 
 }
 .h1 {
@@ -28,13 +31,19 @@ h2{
     font-weight: 900;
     
 }
-h3{
-    font-size: 22px;
+h3 , h4{
+    font-size: 21px;
     color: #08155c;
     text-align: center; display: flex;
     justify-content: space-evenly;
     margin-bottom: 30px;
     font-weight: 900;
+}
+
+h4{
+    color: #0056b3;
+    margin: 0;
+
 }
 .contanier ,.contanier-levels ,.contanier-main ,#contanier-levels-first{
     background-color: #ffffffd4;
@@ -110,11 +119,6 @@ h3{
     width: 100px !important; 
     height: 100px !important; 
 }
-
-
-
-
-
 
 span{
     font-weight: bold;
@@ -212,8 +216,9 @@ span{
 }
 
 .active{
-    background-color: #E6E6FA;
+    background-color: #d6d6f0;
     padding: 6px 0px;
     border-radius: 8px;
     width: 71px;
+    
 }
